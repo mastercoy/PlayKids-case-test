@@ -1,9 +1,14 @@
 /node_modules
 /public/hot
 /public/storage
+/public/css/app.css
+/public/js/app.js
+/public/mix-manifest.json
 /storage/*.key
 /vendor
 .env
+./idea
+.env.testing
 .env.backup
 .phpunit.result.cache
 docker-compose.override.yml
