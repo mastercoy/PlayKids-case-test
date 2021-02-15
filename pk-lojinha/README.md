@@ -1,67 +1,69 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Teste prático - PlayKids & Leiturinha <3   Backend
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Esse projeto foi construído tendo em base o teste proposto pela Playkids.
 
-## About Laravel
+## Começando
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of
-development by easing common tasks used in many web projects, such as:
+O objetivo dessas instruções é de ajudar-lhe a obter uma cópia do projeto rodando 100% na sua máquina local com propósito de testes e avaliação. Obtenha uma cópia do
+projeto [GitHub](https://github.com/mastercoy/[editar])
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+[comment]: <> (Todo)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Pré-requisito
 
-## Learning Laravel
+To run this project you only need [Docker](https://www.docker.com/get-started) and [Docker Compose](https://docs.docker.com/compose/install/)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the
-framework.
+### Instalando
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and
-JavaScript. Boost your skills by digging into our comprehensive video library.
+To install Docker, please visit this website:
 
-## Laravel Sponsors
+* [Docker](https://www.docker.com/get-started) - Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers. Containers are
+  isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the
-Laravel [Patreon page](https://patreon.com/taylorotwell).
+Also install:
 
-### Premium Partners
+* [Docker Compose](https://docs.docker.com/compose/install/) - Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your
+  application’s services. Then, with a single command, you create and start all the services from your configuration.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
+Inside the project there is a folder called Laradock. [Laradoc](http://laradock.io/). Laradock is a full PHP development environment for Docker. Open a terminal into that folder and type:
 
-## Contributing
+``` 
+sudo docker-compose up -d nginx mysql phpmyadmin
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+I am using Linux. If you are on Windows OS, there is no need to run with 'sudo' This command will start a few Docker containers needed for the project. Everything is configured inside the Laradoc
+folder
 
-## Code of Conduct
+## Rodando os testes
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Testes unitários se encontram dentro da pasta '/tests/Unit/UserTest.php'. O nome de cada teste indica o seu propósito. Para executar toda essa classe de teste rode o seguinte comando dentro da pasta
+raiz do projeto:
 
-## Security Vulnerabilities
+```
+php artisan test --filter=UserTest
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly
-addressed.
+O resultado dos testes aparecerão no terminal.
 
-## License
+## Construído com
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+* [Laravel](https://laravel.com/) - Framework utilizado para o back-end
+* [Composer](https://getcomposer.org/) - Gerenciador de dependencias
+* [React](https://reactjs.org/) - Framework utilizado para o front-end
+* [reactstrap](https://reactstrap.github.io/) - componentes do Boostrap 4 para react
+* [MySQL](https://www.mysql.com/) - Banco de dados
+
+## Versionamento
+
+Utilizado o  [GitHub](https://github.com/) para versionamento de projeto.
+
+## Autor
+
+* **Nylo Figueira Pinto** - *Projeto inicial* - [mastercoy](https://github.com/mastercoy)
+
+## Considerações finais
+
+* Muito obrigado a [PlayKids](https://playkids.com/) e a [Leiturinha](https://leiturinha.com.br/) pela oportunidade!
+* Obrigado a [Paula Iwamizu](https://www.linkedin.com/in/paula-iwamizu-32bb0929/) pelo desafio!
+* F
+
