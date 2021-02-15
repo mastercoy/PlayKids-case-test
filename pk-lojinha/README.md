@@ -1,67 +1,61 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Case Test - PlayKids & Leiturinha <3
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This project was build having in mind the test proposed by the PlayKids team.
 
-## About Laravel
+## Starting
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of
-development by easing common tasks used in many web projects, such as:
+The objetive of this guide is to help you have a 100% working copy of this project.Obtain a copy here
+[GitHub](https://github.com/mastercoy/[editar])
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Requirement
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+To run this project you only need [Docker](https://www.docker.com/get-started) and [Docker Compose](https://docs.docker.com/compose/install/)
 
-## Learning Laravel
+### Installing
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the
-framework.
+To install Docker, please follow the instruction on this website:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and
-JavaScript. Boost your skills by digging into our comprehensive video library.
+* [Docker](https://www.docker.com/get-started) - Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers. Containers are
+  isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels.
 
-## Laravel Sponsors
+Also install:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the
-Laravel [Patreon page](https://patreon.com/taylorotwell).
+* [Docker Compose](https://docs.docker.com/compose/install/) - Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your
+  application’s services. Then, with a single command, you create and start all the services from your configuration.
 
-### Premium Partners
+## Running the Project
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
+Inside this project there is a folder called [Laradock](http://laradock.io/). Laradock is a full PHP development environment for Docker. Open a terminal into that folder and type:
 
-## Contributing
+``` 
+sudo docker-compose up -d nginx mysql phpmyadmin
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+I am using Linux. If you are on Windows OS, there is no need to run with 'sudo'. This command will start a few Docker containers needed for the project. Everything is configured inside the Laradoc
+folder
 
-## Code of Conduct
+To access the server, please enter this ip address:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Built with
 
-## Security Vulnerabilities
+* [Vue](https://vuejs.org/) - Frontend framework <3
+* [Laravel](https://laravel.com/) - Backend framework
+* [Docker](https://www.docker.com/get-started) - Containerization
+* [Composer](https://getcomposer.org/) - Dependency manager
+* [Docker Compose](https://docs.docker.com/compose/install/) - Tool for Docker
+* [MySQL](https://www.mysql.com/) - Database
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly
-addressed.
+## Versioning
 
-## License
+Used [GitHub](https://github.com/) for version control.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Autor
+
+* **Nylo Figueira Pinto** - *Projeto inicial* - [mastercoy](https://github.com/mastercoy)
+
+## Final Thoughts
+
+* Thank you very much [PlayKids](https://playkids.com/) and [Leiturinha](https://leiturinha.com.br/) for the opportunity
+* Thank you [Paula Iwamizu](https://www.linkedin.com/in/paula-iwamizu-32bb0929/) for the challenge!
+
+
