@@ -25,6 +25,8 @@ Also install:
 
 ## Running the Project
 
+Open a terminal inside the pk-lojinha folder and run ```composer install && npm install && npm run dev```
+
 Inside this project there is a folder called [Laradock](http://laradock.io/). Laradock is a full PHP development environment for Docker. Open a terminal into that folder and type:
 
 ``` 
@@ -39,6 +41,7 @@ To access the server, please enter this ip address:
 ## Built with
 
 * [Vue](https://vuejs.org/) - Frontend framework <3
+* [TailwindCSS](https://tailwindcss.com/) - CSS framework
 * [Laravel](https://laravel.com/) - Backend framework
 * [Docker](https://www.docker.com/get-started) - Containerization
 * [Composer](https://getcomposer.org/) - Dependency manager
