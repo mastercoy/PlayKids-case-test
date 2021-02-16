@@ -1,10 +1,10 @@
 <template>
     <section class="text-gray-700 body-font overflow-hidden" v-if="product">
         <div class="container px-12 py-24 mx-auto">
-            <div class="lg:w-3/5 mx-auto flex flex-wrap">
+            <div class="lg:w-1/3 mx-auto flex flex-wrap">
                 <!--                fixme buscar na src o product.image-->
                 <img alt="ecommerce image" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/320x320">
-                <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+                <div class="lg:w-2/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                     <h2
                         class="text-sm title-font text-gray-500 tracking-widest uppercase inline-block mr-4"
                         v-for="category in product.categories"

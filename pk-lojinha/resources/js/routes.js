@@ -19,4 +19,4 @@ module.exports = [
         name: 'order.summary',
         component: () => import('./routes/Order/Summary.vue')
     }
-];
+]

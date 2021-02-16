@@ -168,7 +168,7 @@ var render = function() {
         { staticClass: "text-gray-700 body-font overflow-hidden" },
         [
           _c("div", { staticClass: "container px-12 py-24 mx-auto" }, [
-            _c("div", { staticClass: "lg:w-3/5 mx-auto flex flex-wrap" }, [
+            _c("div", { staticClass: "lg:w-1/3 mx-auto flex flex-wrap" }, [
               _c("img", {
                 staticClass: "object-cover object-center w-full h-full block",
                 attrs: {
@@ -180,7 +180,7 @@ var render = function() {
               _c(
                 "div",
                 {
-                  staticClass: "lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0"
+                  staticClass: "lg:w-2/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0"
                 },
                 [
                   _vm._l(_vm.product.categories, function(category) {
