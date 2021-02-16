@@ -13,7 +13,7 @@ class CreateProductsTable extends Migration {
     public function up() {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('image');
+            $table->string('image')->default('');
             $table->string('name');
             $table->string('slug')->unique();
             $table->string('description');
