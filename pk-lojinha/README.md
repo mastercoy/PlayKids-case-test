@@ -25,13 +25,28 @@ Also install:
 
 ## Running the Project
 
-Open a terminal inside the pk-lojinha folder and run ```composer install && npm install && npm run dev```
-
-Inside this project there is a folder called [Laradock](http://laradock.io/). Laradock is a full PHP development environment for Docker. Open a terminal into that folder and type:
-
+Inside this project there is a folder called [Laradock](http://laradock.io/). Laradock is a full PHP development environment for Docker.
+Open a terminal into that folder and type:
 ``` 
 sudo docker-compose up -d nginx mysql phpmyadmin
 ```
+
+Enter in our project workspace:
+
+```sudo docker-compose exec --user=laradock workspace bash```
+
+Now run
+
+```composer install && npm install && npm run dev```
+
+Dont forget to configure your .env file with the database name and stripe data. I am using stripe test data.
+Create the database using the phpmyadmin docker container. visit localhost:1010 (default)
+
+It needs to be in ```utf8mb4_unicode_ci```
+
+Now, run the migration and seeding:
+
+``` php artisan migrate && php artisan db:seed```
 
 I am using Linux. If you are on Windows OS, there is no need to run with 'sudo'. This command will start a few Docker containers needed for the project. Everything is configured inside the Laradoc
 folder
