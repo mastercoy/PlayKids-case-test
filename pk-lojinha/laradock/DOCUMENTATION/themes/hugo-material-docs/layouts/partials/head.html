@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]>
+<html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]>
+<html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]>
+<html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]>
+<html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="no-js"> <!--<![endif]-->
+
+    <head .Site.LanguageCode end with {{ {{ }} }}lang="{{ . }}">
+        <meta charset="utf-8">
+        <meta content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1" name="viewport">
+        <meta content="IE=10" http-equiv="X-UA-Compatible"/>
+        <title>{{ .Title }}{{ if not .IsHome }} - {{ .Site.Title }}{{ end }}</title>
+        {{ .Hugo.Generator }}
+
+        {{ with .Site.Params.description }}
+        <meta content="{{ . }}" name="description">
+        {{ end }}
+        <link href="{{ .Permalink }}" rel="canonical">
+        {{ with .Site.Params.author }}
+        <meta content="{{ . }}" name="author">
+        {{ end }}
+
+        <meta content="{{ .Permalink }}" property="og:url">
+        <meta content="website" property="og:type">
+        {{ with .Site.Title }}
+        <meta content="{{ . }}" property="og:site_name">
+        {{ end }}
+        {{ with .Site.Params.description }}
+        <meta content="{{ . }}" property="og:description">
+        {{ end }}
+        {{ with .Site.Title }}
+        <meta content="{{ . }}" property="og:title">
+        {{ end }}
+        {{ with .Site.Params.logo }}
+        <meta content="{{ . | absURL }}" property="og:image">
+        {{ end }}
+
+        <meta content="summary" name="twitter:card">
+        <meta content="@Mahmoud_Zalt" name="twitter:site">
+        {{ with .Site.Title }}
+        <meta content="{{ . }}" name="twitter:title">
+        {{ end }}
+        {{ with .Site.Params.description }}
+        <meta content="{{ . }}" name="twitter:description">
+        {{ end }}
+        {{ with .Site.Params.logo }}
+        <meta content="{{ . | absURL }}" name="twitter:image">
+        {{ end }}
+
+        {{ with .Site.Title }}
+        <meta content="{{ . }}" name="apple-mobile-web-app-title">
+        {{ end }}
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
+
+        <link href="{{ with .Site.Params.favicon }}{{ . | absURL }}{{ else }}{{ " images rel="shortcut icon" type="image/x-icon"
+        /favicon.ico" | absURL }}{{ end }}">
+        <link href="{{ with .Site.Params.favicon }}{{ . | absURL }}{{ else }}{{ " images rel="icon" type="image/x-icon"
+        /favicon.ico" | absURL }}{{ end }}">
+
+        <!--    <link rel="icon" type="image/png" sizes="192x192"  href="images/favicons/android-icon-192x192.png">-->
+        <!--    <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">-->
+        <!--    <link rel="icon" type="image/png" sizes="96x96" href="images/favicons/favicon-96x96.png">-->
+        <!--    <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">-->
+
+        <link href="images/favicons/apple-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
+        <link href="images/favicons/apple-icon-60x60.png" rel="apple-touch-icon" sizes="60x60">
+        <link href="images/favicons/apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+        <link href="images/favicons/apple-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+        <link href="images/favicons/apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+        <link href="images/favicons/apple-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+        <link href="images/favicons/apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+        <link href="images/favicons/apple-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+        <link href="images/favicons/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180">
+        <link href="images/favicons/manifest.json" rel="manifest">
+        <meta content="#7e57c2" name="msapplication-TileColor">
+        <meta content="images/favicons/ms-icon-144x144.png" name="msapplication-TileImage">
+        <meta content="#7e57c2" name="theme-color">
+
+        <style>
+            @font-face {
+                font-family: 'Icon';
+                src: url('{{ "fonts/icon.eot?52m981" | absURL }}');
+                src: url('{{ "fonts/icon.eot?#iefix52m981" | absURL }}') format('embedded-opentype'),
+                url('{{ "fonts/icon.woff?52m981" | absURL }}') format('woff'),
+                url('{{ "fonts/icon.ttf?52m981" | absURL }}') format('truetype'),
+                url('{{ "fonts/icon.svg?52m981#icon" | absURL }}') format('svg');
+                font-weight: normal;
+                font-style: normal;
+            }
+        </style>
+
+        <link href="{{ " rel="stylesheet" stylesheets
+        /application.css" | absURL }}">
+        <link href="{{ " rel="stylesheet" stylesheets
+        /temporary.css" | absURL }}">
+        <link href="{{ " rel="stylesheet" stylesheets
+        /palettes.css" | absURL }}">
+        <link href="{{ with .Site.Params.highlight_css }}{{ . | absURL }}{{ else }}{{ " rel="stylesheet" stylesheets
+        /highlight/highlight.css" | absURL }}{{ end }}">
+
+        {{/* set default values if no custom ones are defined */}}
+        {{ $text := or .Site.Params.font.text "Roboto" }}
+        {{ $code := or .Site.Params.font.code "Roboto Mono" }}
+        <link href="//fonts.googleapis.com/css?family={{ $text }}:400,700|{{ replace  $code " rel="stylesheet"
+        " "+" | safeURL }}">
+        <style>
+            body, input {
+                font-family: '{{ $text }}', Helvetica, Arial, sans-serif;
+            }
+
+            pre, code {
+                font-family: '{{ $code }}', 'Courier New', 'Courier', monospace;
+            }
+        </style>
+
+        {{ range .Site.Params.custom_css }}
+        <link href="{{ . | absURL }}" rel="stylesheet">
+        {{ end }}
+        <script javascripts src="{{ "
+        /modernizr.js" | absURL }}"></script>
+
+        {{ with .RSSLink }}
+        <link href="{{ . }}" rel="alternate" title="{{ $.Site.Title }}" type="application/rss+xml"/>
+        <link href="{{ . }}" rel="feed" title="{{ $.Site.Title }}" type="application/rss+xml"/>
+        {{ end }}
+
+    </head>
+    <body class="{{ with .Site.Params.palette.primary }}palette-primary-{{ . }}{{end }} {{ with .Site.Params.palette.accent }}palette-accent-{{ .  }}{{ end }}">

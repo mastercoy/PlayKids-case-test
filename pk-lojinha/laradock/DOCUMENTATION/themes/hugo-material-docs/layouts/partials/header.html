@@ -1,0 +1,45 @@
+<nav aria-label="Header">
+    <div class="bar default">
+        <div aria-label="Menu" class="button button-menu" role="button">
+            <label class="toggle-button icon icon-menu" for="toggle-drawer">
+                <span></span>
+            </label>
+        </div>
+        <div class="stretch">
+            <div class="title">
+                <b>{{ .Site.Title }}</b> <span style="color: rgba(249, 245, 255, 0.63);"> / {{ .Title }}</span>
+            </div>
+        </div>
+
+        {{ with .Site.Social.twitter }}
+        <div aria-label="Twitter" class="button button-twitter" role="button">
+            <a class="toggle-button icon icon-twitter" href="https://twitter.com/{{ . }}" target="_blank" title="@{{ . }} on Twitter"></a>
+        </div>
+        {{ end }}
+
+        {{ with .Site.Social.github }}
+        <div aria-label="GitHub" class="button button-github" role="button">
+            <a class="toggle-button icon icon-github" href="https://github.com/{{ . }}" style="padding: 0px; font-size:40px" target="_blank" title="@{{ . }} on GitHub"></a>
+        </div>
+        {{ end }}
+
+        <!-- TODO: disabled until Hugo supports the generation of a content index natively
+        <div class="button button-search" role="button" aria-label="Search">
+          <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
+        </div>
+        -->
+    </div>
+    <div class="bar search">
+        <div aria-label="Close" class="button button-close" role="button">
+            <label class="toggle-button icon icon-back" for="toggle-search"></label>
+        </div>
+        <div class="stretch">
+            <div class="field">
+                <input autocapitalize="off" autocomplete="off" autocorrect="off" class="query" placeholder="Search" spellcheck type="text">
+            </div>
+        </div>
+        <div aria-label="Search" class="button button-reset" role="button">
+            <button class="toggle-button icon icon-close" id="reset-search"></button>
+        </div>
+    </div>
+</nav>
