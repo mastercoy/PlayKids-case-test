@@ -4,8 +4,7 @@ This project was build having in mind the test proposed by the PlayKids team.
 
 ## Starting
 
-The objetive of this guide is to help you have a 100% working copy of this project.Obtain a copy here
-[GitHub](https://github.com/mastercoy/[editar])
+The objective of this guide is to help you have a 100% working copy of this project.
 
 ### Requirement
 
@@ -25,6 +24,10 @@ Also install:
 
 ## Running the Project
 
+First, open a terminal at the project root and run:
+
+```npm install```
+
 Inside this project there is a folder called [Laradock](http://laradock.io/). Laradock is a full PHP development environment for Docker.
 Open a terminal into that folder and type:
 ``` 
@@ -37,21 +40,23 @@ Enter in our project workspace:
 
 Now run
 
-```composer install && npm install && npm run dev```
+```composer install && npm run dev```
 
-Dont forget to configure your .env file with the database name and stripe data. I am using stripe test data.
-Create the database using the phpmyadmin docker container. visit localhost:1010 (default)
+Create the database using the phpmyadmin docker container, it needs to be in ```utf8mb4_unicode_ci```. Visit ```localhost:1010``` to access PhpMyAdmin
 
-It needs to be in ```utf8mb4_unicode_ci```
+Now make a copy of the ```.env.example``` file inside the root folder and call it just ```.env```
+
+Edit you .env file with the database name and stripe data. I am using stripe test data. (You need a stripe account to access test dashboard)
 
 Now, run the migration and seeding:
 
-``` php artisan migrate && php artisan db:seed```
+```php artisan migrate && php artisan db:seed```
 
 I am using Linux. If you are on Windows OS, there is no need to run with 'sudo'. This command will start a few Docker containers needed for the project. Everything is configured inside the Laradoc
 folder
 
 To access the server, please enter this ip address:
+```localhost:8888```
 
 ## Built with
 
@@ -75,5 +80,4 @@ Used [GitHub](https://github.com/) for version control.
 
 * Thank you very much [PlayKids](https://playkids.com/) and [Leiturinha](https://leiturinha.com.br/) for the opportunity
 * Thank you [Paula Iwamizu](https://www.linkedin.com/in/paula-iwamizu-32bb0929/) for the challenge!
-
 
