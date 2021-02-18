@@ -12,7 +12,7 @@ To run this project you only need [Docker](https://www.docker.com/get-started) a
 
 ### Installing
 
-To install Docker, please follow the instruction on this website:
+To install Docker, please follow the instructions on this website:
 
 * [Docker](https://www.docker.com/get-started) - Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers. Containers are
   isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels.
@@ -29,7 +29,7 @@ First, open a terminal at the project root and run:
 ```npm install```
 
 Inside this project there is a folder called [Laradock](http://laradock.io/). Laradock is a full PHP development environment for Docker.
-Open a terminal into that folder and type:
+Open a terminal into that folder and type: (be aware, this will take a while)
 ``` 
 sudo docker-compose up -d nginx mysql phpmyadmin
 ```
@@ -52,10 +52,9 @@ Now, run the migration and seeding:
 
 ```php artisan migrate && php artisan db:seed```
 
-I am using Linux. If you are on Windows OS, there is no need to run with 'sudo'. This command will start a few Docker containers needed for the project. Everything is configured inside the Laradoc
-folder
+I am using Linux. If you are on Windows OS, there is no need to run commands with 'sudo'. 
 
-To access the server, please enter this ip address:
+To access the server, please enter this ip address at your browser:
 ```localhost:8888```
 
 ## Built with
