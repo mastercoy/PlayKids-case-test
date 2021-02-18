@@ -33,6 +33,7 @@ class UserController extends Controller {
 
             $payment = $payment->asStripePaymentIntent();
 
+            //fixme estou com problemas ao manipular essa order
             $order = $user->orders()
                           ->create([
                                        'transaction_id' => $payment->charges->data[0]->id,

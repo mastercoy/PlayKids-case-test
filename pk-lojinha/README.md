@@ -2,7 +2,7 @@
 
 This project was build having in mind the test proposed by the PlayKids team.
 
-## Starting
+### Starting
 
 The objective of this guide is to help you have a 100% working copy of this project.
 
@@ -40,9 +40,9 @@ Enter in our project workspace:
 
 Now run
 
-```composer install && npm run dev```
+```composer install && composer update && npm run dev```
 
-Create the database using the phpmyadmin docker container, it needs to be in ```utf8mb4_unicode_ci```. Visit ```localhost:1010``` to access PhpMyAdmin
+Visit ```localhost:1010``` to access PhpMyAdmin docker container and create the database, it needs to be in ```utf8mb4_unicode_ci```. 
 
 Now make a copy of the ```.env.example``` file inside the root folder and call it just ```.env```
 
@@ -72,7 +72,7 @@ To access the server, please enter this ip address:
 
 Used [GitHub](https://github.com/) for version control.
 
-## Autor
+## Author
 
 * **Nylo Figueira Pinto** - *Projeto inicial* - [mastercoy](https://github.com/mastercoy)
 
