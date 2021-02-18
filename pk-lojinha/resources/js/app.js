@@ -16,6 +16,7 @@ const store = new Vuex.Store({
     state: {
         products: [],
         cart: [],
+        token: localStorage.getItem('token') ? localStorage.getItem('token') : '',
         order: {}
     },
 
@@ -45,6 +46,10 @@ const store = new Vuex.Store({
 
         updateCart(state, cart) {
             state.cart = cart;
+        },
+
+        setToken(state, token) {
+            state.token = token;
         }
     },
 
@@ -54,6 +59,16 @@ const store = new Vuex.Store({
             axios.get('/api/products')
                 .then((response) => {
                     commit('updateProducts', response.data);
+                })
+                .catch((error) => console.error(error));
+        },
+
+        //Todo setar header nas paginas que irão precisar da autenticação
+        login({commit}, credentials) {
+            axios.post('/api/login', credentials)
+                .then((response) => {
+                    commit('setToken', response.data);
+                    localStorage.setItem('token', response.data);
                 })
                 .catch((error) => console.error(error));
         },
@@ -70,7 +85,8 @@ const app = new Vue({
     el: '#app',
     created() {
         store.dispatch('getProducts')
-            .then(_ => {})
+            .then(_ => {
+            })
             .catch((error) => console.error(error))
     }
 })

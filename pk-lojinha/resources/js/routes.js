@@ -18,5 +18,10 @@ module.exports = [
         path: '/summary',
         name: 'order.summary',
         component: () => import('./routes/Order/Summary.vue')
+    },
+    {
+        path: '/login',
+        name: 'auth.login',
+        component: () => import('./routes/Auth/Login.vue')
     }
 ]

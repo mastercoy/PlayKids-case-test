@@ -54,4 +54,11 @@ class UserController extends Controller {
 
     }
 
+    public function login(Request $request) {
+        // autenticar o usuário
+        // criar token com o sanctum
+        // retornar token
+
+    }
+
 }

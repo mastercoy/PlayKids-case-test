@@ -108,11 +108,11 @@ function check_mounted_folder_with_chown
 #      This means on start up, /data and /logs are owned by an unknown user and we should chown them to neo4j for
 #      backwards compatibility.
 #
-#   User ID passed to container:
+#   Auth ID passed to container:
 #   1) Both /data and /logs are mounted
 #      The /data and /logs folders are owned by an unknown user but we *should* have rw permission to them.
 #      That should be verified and error (helpfully) if not.
-#   2) User mounts /data or /logs *but not both*
+#   2) Auth mounts /data or /logs *but not both*
 #      The  unmounted folder is still owned by neo4j, which should already be writable. The mounted folder should
 #      have rw permissions through user id. This should be verified.
 #   3) No folders are mounted.
