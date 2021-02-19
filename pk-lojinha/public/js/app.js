@@ -2012,6 +2012,12 @@ module.exports = [{
   component: function component() {
     return __webpack_require__.e(/*! import() */ "resources_js_routes_Auth_Login_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./routes/Auth/Login.vue */ "./resources/js/routes/Auth/Login.vue"));
   }
+}, {
+  path: '/register',
+  name: 'auth.register',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_routes_Auth_Register_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./routes/Auth/Register.vue */ "./resources/js/routes/Auth/Register.vue"));
+  }
 }];
 
 /***/ }),
@@ -53846,7 +53852,7 @@ var index = {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_routes_Products_Index_vue":1,"resources_js_routes_Products_Show_vue":1,"resources_js_routes_Order_Checkout_vue":1,"resources_js_routes_Order_Summary_vue":1,"resources_js_routes_Auth_Login_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_routes_Products_Index_vue":1,"resources_js_routes_Products_Show_vue":1,"resources_js_routes_Order_Checkout_vue":1,"resources_js_routes_Order_Summary_vue":1,"resources_js_routes_Auth_Login_vue":1,"resources_js_routes_Auth_Register_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

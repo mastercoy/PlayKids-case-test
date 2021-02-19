@@ -8,13 +8,13 @@
                     alt="Workflow"
                 >
                 <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
-                    Entre para acessar seu perfil!
+                    Login de administrador.
                 </h2>
                 <p class="mt-2 text-center text-sm text-gray-600">
                     Ou
-                    <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">
-                        Crie uma nova conta!
-                    </a>
+                    <router-link class="mr-5 hover:text-gray-900" :to="{name: 'auth.register'}">
+                        crie uma nova conta!
+                    </router-link>
                 </p>
             </div>
             <!--            //fixme-->
