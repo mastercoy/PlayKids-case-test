@@ -84,18 +84,15 @@
 <script>
 export default {
     methods: {
-        formatCurrency(price) {
-            price = (price / 100);
-            return price.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
+        // Todo apos submeter, redirecionar
+        submit() {
+
         }
+
 
     },
 
-    computed: {
-        products() {
-            return this.$store.state.products;
-        }
-    }
+    computed: {}
 }
 </script>
 
