@@ -1860,6 +1860,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__.default.Store({
   state: {
     products: [],
     cart: [],
+    token: localStorage.getItem('token') ? localStorage.getItem('token') : '',
     order: {}
   },
   mutations: {
@@ -1887,6 +1888,9 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__.default.Store({
     },
     updateCart: function updateCart(state, cart) {
       state.cart = cart;
+    },
+    setToken: function setToken(state, token) {
+      state.token = token;
     }
   },
   actions: {
@@ -1899,8 +1903,18 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__.default.Store({
         return console.error(error);
       });
     },
-    clearCart: function clearCart(_ref2) {
+    //Todo setar header nas paginas que irão precisar da autenticação
+    login: function login(_ref2, credentials) {
       var commit = _ref2.commit;
+      axios.post('/api/login', credentials).then(function (response) {
+        commit('setToken', response.data);
+        localStorage.setItem('token', response.data);
+      })["catch"](function (error) {
+        return console.error(error);
+      });
+    },
+    clearCart: function clearCart(_ref3) {
+      var commit = _ref3.commit;
       commit('updateCart', []);
     }
   }
