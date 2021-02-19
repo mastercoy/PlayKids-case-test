@@ -23,5 +23,10 @@ module.exports = [
         path: '/login',
         name: 'auth.login',
         component: () => import('./routes/Auth/Login.vue')
+    },
+    {
+        path: '/register',
+        name: 'auth.register',
+        component: () => import('./routes/Auth/Register.vue')
     }
 ]
