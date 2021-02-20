@@ -61,4 +61,10 @@ class UserController extends Controller {
 
     }
 
+    public function register(User $user) {
+        return 'register method';
+        // return $user;
+
+    }
+
 }

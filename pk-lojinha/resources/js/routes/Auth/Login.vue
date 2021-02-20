@@ -67,9 +67,17 @@
 
 <script>
 export default {
+    data: () => ({
+        errors: [],
+        data: {
+            email: "",
+            password: "",
+        }
+    }),
+
     methods: {
         // Todo apos submeter, redirecionar
-        submit() {
+        login() {
 
         }
 
