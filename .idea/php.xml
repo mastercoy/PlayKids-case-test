@@ -118,6 +118,7 @@
       <path value="$PROJECT_DIR$/pk-lojinha/vendor/stripe/stripe-php" />
       <path value="$PROJECT_DIR$/pk-lojinha/vendor/moneyphp/money" />
       <path value="$PROJECT_DIR$/pk-lojinha/vendor/sabberworm/php-css-parser" />
+      <path value="$PROJECT_DIR$/pk-lojinha/vendor/laravel/sanctum" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

@@ -61,6 +61,7 @@
                                     <label class="block mb-2 text-sm font-bold text-gray-700" for="password_confirmation">
                                         Confirme sua senha
                                     </label>
+<!--                                    fixme password confirmation-->
                                     <input
                                         v-model="data.password_confirmation"
                                         class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
@@ -94,8 +95,7 @@ export default {
         data: {
             name: "",
             email: "",
-            password: "",
-            password_confirmation: "",
+            password: ""
         }
     }),
     methods: {
@@ -104,11 +104,11 @@ export default {
                 name: this.data.name,
                 email: this.data.email,
                 password: this.data.password,
-                password_confirmation: this.data.password_confirmation
             };
-            console.log(data)
+            // Todo limpar os comments
             axios.post(`http://localhost:8888/api/register-user`, data)
                 .then((response) => {
+                    // console.log('resposta laravel ===========')
                     // console.log(response.data)
                     alert('Usuário criado com sucesso!');
                     this.$router.push('/login');
