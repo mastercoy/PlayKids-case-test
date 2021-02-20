@@ -55,9 +55,22 @@ class UserController extends Controller {
     }
 
     public function login(Request $request) {
-        // autenticar o usuário
-        // criar token com o sanctum
-        // retornar token
+
+        $user = User::where('email', $request->email)->first();
+        if (!$user || !Hash::check($request->password, $user->password)) {
+            return response([
+                                'message' => ['Usuário e/ou senha incorretos.']
+                            ], 404);
+        }
+
+        $token = $user->createToken('my-app-token')->plainTextToken;
+        $response = [
+            'user' => $user,
+            'token' => $token
+        ];
+
+        return response($response, 201);
+
 
     }
 
