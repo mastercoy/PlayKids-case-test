@@ -46,7 +46,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   methods: {
     cartLineTotal: function cartLineTotal(item) {
-      var amount = item.price * item.quantity;
+      var amount = item.price * item.pivot.quantity;
       amount = amount / 100;
       return amount.toLocaleString('pt-BR', {
         style: 'currency',
@@ -55,20 +55,23 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   computed: {
+    //fixme esta vindo com problema
     order: function order() {
+      // console.log('teste')
+      // console.log(this.$store.state.cart)
       return this.$store.state.order;
     },
     orderQuantity: function orderQuantity() {
-      return this.order.products.reduce(function (acc, item) {
-        return acc + item.quantity;
+      return this.$store.state.order.products.reduce(function (acc, item) {
+        return acc + item.pivot.quantity;
       }, 0);
     },
     orderTotal: function orderTotal() {
-      var price = this.order.products.reduce(function (acc, item) {
-        return acc + item.price * item.quantity;
+      var amount = this.$store.state.order.products.reduce(function (acc, item) {
+        return acc + item.price * item.pivot.quantity;
       }, 0);
-      price = price / 100;
-      return price.toLocaleString('pt-BR', {
+      amount = amount / 100;
+      return amount.toLocaleString('pt-BR', {
         style: 'currency',
         currency: 'BRL'
       });
@@ -199,7 +202,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", {
                     staticClass: "p-4",
-                    domProps: { textContent: _vm._s(item.quantity) }
+                    domProps: { textContent: _vm._s(item.pivot.quantity) }
                   }),
                   _vm._v(" "),
                   _c("td", {

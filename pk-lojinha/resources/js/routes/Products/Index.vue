@@ -7,7 +7,7 @@
                         <img alt="ecommerce image" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/420x260">
                     </a>
                     <div class="mt-4">
-                        <h3 class="text-gray-500 txt-xs tracking-widest title-font mb-1 uppercase inline-block mr-2">Ops, você ainda não adicionou nenhum produto no carrinho</h3>
+                        <h3 class="text-gray-500 txt-xs tracking-widest title-font mb-1 uppercase inline-block mr-2">Ops, nenhum produto cadastrado!</h3>
                         <h2 class="text-gray-900 title-font text-lg font-medium">Carregando</h2>
                         <p class="mt-1">R$0,00</p>
                     </div>

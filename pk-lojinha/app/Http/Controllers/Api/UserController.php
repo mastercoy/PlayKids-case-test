@@ -33,6 +33,7 @@ class UserController extends Controller {
 
             $payment = $payment->asStripePaymentIntent();
 
+            //fixme estou com problemas ao manipular essa order
             $order = $user->orders()
                           ->create([
                                        'transaction_id' => $payment->charges->data[0]->id,
@@ -50,6 +51,19 @@ class UserController extends Controller {
         } catch (\Exception $e) {
             return response()->json(['message' => $e->getMessage()], 500);
         }
+
+    }
+
+    public function login(Request $request) {
+        // autenticar o usuário
+        // criar token com o sanctum
+        // retornar token
+
+    }
+
+    public function register(User $user) {
+        return 'register method';
+        // return $user;
 
     }
 

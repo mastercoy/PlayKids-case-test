@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-  NOTE: User and query level settings are set up in "users.xml" file.
+  NOTE: Auth and query level settings are set up in "users.xml" file.
 -->
 <yandex>
     <!-- The list of hosts allowed to use in URL-related storage engines and table functions.

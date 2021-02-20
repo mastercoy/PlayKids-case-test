@@ -40,7 +40,10 @@ export default {
         }
     },
     computed: {
+        //fixme esta vindo com problema
         order() {
+            // console.log('teste')
+            // console.log(this.$store.state.cart)
             return this.$store.state.order;
         },
         orderQuantity() {
