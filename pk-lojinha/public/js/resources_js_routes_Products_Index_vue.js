@@ -266,7 +266,7 @@ var staticRenderFns = [
             staticClass:
               "text-gray-500 txt-xs tracking-widest title-font mb-1 uppercase inline-block mr-2"
           },
-          [_vm._v("Ops, você ainda não adicionou nenhum produto no carrinho")]
+          [_vm._v("Ops, nenhum produto cadastrado!")]
         ),
         _vm._v(" "),
         _c(
