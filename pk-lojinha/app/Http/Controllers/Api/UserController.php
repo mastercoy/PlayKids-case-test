@@ -61,9 +61,12 @@ class UserController extends Controller {
 
     }
 
-    public function register(User $user) {
-        return 'register method';
-        // return $user;
+    public function register(Request $request) {
+        $request['password'] = bcrypt($request['password']);
+        $data = $request->all();
+
+        $user = User::firstOrCreate($data);
+        return $user;
 
     }
 
