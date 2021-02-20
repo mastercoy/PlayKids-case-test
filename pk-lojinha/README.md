@@ -2,9 +2,11 @@
 
 This project was build having in mind the test proposed by the PlayKids team.
 
-## Starting
+### Starting
 
 The objective of this guide is to help you have a 100% working copy of this project.
+
+I am using Linux. If you are on Windows OS, there is no need to run 'sudo' in the commands provided below.
 
 ### Requirement
 
@@ -24,17 +26,18 @@ Also install:
 
 ## Running the Project
 
-First, open a terminal at the project root and run:
+First, open a terminal at the project root folder (pk-lojinha) and run:
 
 ```npm install```
 
 Inside this project there is a folder called [Laradock](http://laradock.io/). Laradock is a full PHP development environment for Docker.
+Let's start a few containers needed to run our project.
 Open a terminal into that folder and type: (be aware, this will take a while)
 ``` 
 sudo docker-compose up -d nginx mysql phpmyadmin
 ```
 
-Enter in our project workspace:
+Enter in our project workspace. Type at this same terminal:
 
 ```sudo docker-compose exec --user=laradock workspace bash```
 
@@ -42,20 +45,27 @@ Now run
 
 ```composer install && npm run dev```
 
-Create the database using the phpmyadmin docker container, it needs to be in ```utf8mb4_unicode_ci```. Visit ```localhost:1010``` to access PhpMyAdmin
+Create the database using the phpmyadmin docker container, it needs to be in ```utf8mb4_unicode_ci```. Visit ```localhost:1010``` to access PhpMyAdmin.
 
 Now make a copy of the ```.env.example``` file inside the root folder and call it just ```.env```
 
-Edit you .env file with the database name and stripe data. I am using stripe test data. (You need a stripe account to access test dashboard)
+Edit you .env file with the database name. 
 
-Now, run the migration and seeding:
+In order to be able to use the credit card payment at the payment screen,
+you must create a stripe account, access your test dashboard and get some values into our .env file.
+
+Now got back to our open terminal and run the migration and seeding. You will have a few data into your database already. Type:
 
 ```php artisan migrate && php artisan db:seed```
 
-I am using Linux. If you are on Windows OS, there is no need to run commands with 'sudo'.
-
 To access the server, please enter this ip address at your browser:
 ```localhost:8888```
+
+### Observations
+If for any reason you are unable to access phpmyadmin, try to 'down' your docker containers with ```sudo docker-compose down``` 
+and up again with ```sudo docker-compose up -d nginx mysql phpmyadmin```. This is a particularity i found, could be only on my system
+but who knows, right? (:
+
 
 ## Built with
 
@@ -79,4 +89,7 @@ Used [GitHub](https://github.com/) for version control.
 
 * Thank you very much [PlayKids](https://playkids.com/) and [Leiturinha](https://leiturinha.com.br/) for the opportunity
 * Thank you [Paula Iwamizu](https://www.linkedin.com/in/paula-iwamizu-32bb0929/) for the challenge!
+* Thank you very much [Brunna Reis](https://www.linkedin.com/in/brunna-reis-995864162/) for your love and support.
+* Thank you very much [Leandro](https://www.linkedin.com/in/leandro-gon%C3%A7alves-954451176/) and [Igor](https://www.linkedin.com/in/igor-vieira-de-souza-9b1881101/) for all your help and patience.
+* This is still a Work In Progress.
 
