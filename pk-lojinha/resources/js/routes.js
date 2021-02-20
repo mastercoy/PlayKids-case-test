@@ -29,9 +29,4 @@ module.exports = [
         name: 'auth.register',
         component: () => import('./routes/Auth/Register.vue')
     },
-    {
-        path: '/admin-area',
-        name: 'admin.adminpanel',
-        component: () => import('./routes/Admin/AdminPanel')
-    }
 ]
