@@ -55,15 +55,31 @@ class UserController extends Controller {
     }
 
     public function login(Request $request) {
-        // autenticar o usuário
-        // criar token com o sanctum
-        // retornar token
+
+        $user = User::where('email', $request->email)->first();
+        if (!$user || !Hash::check($request->password, $user->password)) {
+            return response([
+                                'message' => ['Usuário e/ou senha incorretos.']
+                            ], 404);
+        }
+
+        $token = $user->createToken('my-app-token')->plainTextToken;
+        $response = [
+            'user' => $user,
+            'token' => $token
+        ];
+
+        return response($response, 201);
+
 
     }
 
-    public function register(User $user) {
-        return 'register method';
-        // return $user;
+    public function register(Request $request) {
+        $request['password'] = bcrypt($request['password']);
+        $data = $request->all();
+
+        $user = User::firstOrCreate($data);
+        return $user;
 
     }
 
