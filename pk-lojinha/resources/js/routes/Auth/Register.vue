@@ -1,11 +1,8 @@
 <template>
     <body class="font-mono bg-gray-400">
-        <!-- Container -->
         <div class="container mx-auto">
             <div class="flex justify-center px-6 my-12">
-                <!-- Row -->
                 <div class="w-full xl:w-3/4 lg:w-11/12 flex">
-                    <!-- Col -->
                     <div
                         class="w-full h-auto bg-white hidden lg:block lg:w-5/12 bg-cover rounded-l-lg"
                         style="background-image: url('https://i.imgur.com/uvBPjMu.png')"
@@ -61,6 +58,7 @@
                                     <label class="block mb-2 text-sm font-bold text-gray-700" for="password_confirmation">
                                         Confirme sua senha
                                     </label>
+                                    <!--                                    Todo futura confirmação de senha-->
                                     <input
                                         v-model="data.password_confirmation"
                                         class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
@@ -94,8 +92,7 @@ export default {
         data: {
             name: "",
             email: "",
-            password: "",
-            password_confirmation: "",
+            password: ""
         }
     }),
     methods: {
@@ -104,12 +101,9 @@ export default {
                 name: this.data.name,
                 email: this.data.email,
                 password: this.data.password,
-                password_confirmation: this.data.password_confirmation
             };
-            console.log(data)
             axios.post(`http://localhost:8888/api/register-user`, data)
                 .then((response) => {
-                    // console.log(response.data)
                     alert('Usuário criado com sucesso!');
                     this.$router.push('/login');
 

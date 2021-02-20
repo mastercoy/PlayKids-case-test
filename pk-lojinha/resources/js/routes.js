@@ -28,5 +28,5 @@ module.exports = [
         path: '/register',
         name: 'auth.register',
         component: () => import('./routes/Auth/Register.vue')
-    }
+    },
 ]

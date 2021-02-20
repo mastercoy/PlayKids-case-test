@@ -55,7 +55,6 @@ const store = new Vuex.Store({
 
     actions: {
         getProducts({commit}) {
-            // fetch the products and their attached categories from the api
             axios.get('/api/products')
                 .then((response) => {
                     commit('updateProducts', response.data);
@@ -63,7 +62,6 @@ const store = new Vuex.Store({
                 .catch((error) => console.error(error));
         },
 
-        //Todo setar header nas paginas que irão precisar da autenticação
         login({commit}, credentials) {
             axios.post('/api/login', credentials)
                 .then((response) => {

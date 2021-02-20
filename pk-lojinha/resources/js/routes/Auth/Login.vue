@@ -17,13 +17,17 @@
                     </router-link>
                 </p>
             </div>
-            <!--            //fixme-->
-            <form class="mt-8 space-y-6" action="#" method="POST">
+            <form
+                ref="form"
+                class="mt-8 space-y-6" action="#"
+                @submit.prevent="login"
+            >
                 <input type="hidden" name="remember" value="true">
                 <div class="rounded-md shadow-sm -space-y-px">
                     <div>
                         <label for="email-address" class="sr-only">Endereço de Email</label>
                         <input
+                            v-model="data.email"
                             id="email-address" name="email" type="email" autocomplete="email" required
                             class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500
                                 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
@@ -32,6 +36,7 @@
                     <div>
                         <label for="password" class="sr-only">Senha</label>
                         <input
+                            v-model="data.password"
                             id="password" name="password" type="password" autocomplete="current-password" required
                             class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500
                                 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
@@ -76,9 +81,23 @@ export default {
     }),
 
     methods: {
-        // Todo apos submeter, redirecionar
         login() {
+            let data = {
+                email: this.data.email,
+                password: this.data.password,
+            };
+            console.log('objeto data', data);
 
+            axios.post(`http://localhost:8888/api/login`, data)
+                .then((response) => {
+                    console.log('response do backend', response.data);
+                    this.$router.push('/admin-area'); // redireciona
+                })
+                .catch(error => {
+                        console.log('Something bad happened!')
+                        console.log(error)
+                    }
+                );
         }
 
 
