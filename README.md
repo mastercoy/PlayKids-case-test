@@ -66,6 +66,30 @@ If for any reason you are unable to access phpmyadmin, try to 'down' your docker
 and up again with ```sudo docker-compose up -d nginx mysql phpmyadmin```. This is a particularity i found, could be only on my system
 but who knows, right? (:
 
+### Project Screenshots
+
+Here is the Landing page. The first Page the user will see upon entering our store.
+Few products are random generated with a base image, categories, name, description and price.
+
+![Landing Page](https://i.imgur.com/sfOZJxI.png "")
+
+
+Upon clicking at an item, this page with details of the product will open. Here you can add the item to your cart.
+Here in this screenshot I have already added a couple items to our cart.
+![Product page](https://i.imgur.com/Febe1dK.png "")
+
+
+Here is the cart page. You can see the items you want to buy, how many of it and you can also remove items.
+Below your items you can see the price total already formatted to BRL.
+In this store model the user does not need an account to buy. It only needs to provide valid data and a valid credit card.
+I integrated our store with Stripe and used for this screenshot Stripe Test data.
+![Cart page](https://i.imgur.com/3aMPcuO.png "")
+
+The Login Page. Here the admin can log in or use the provided link to create a admin account.
+![Login page](https://i.imgur.com/gTii7a4.png "")
+
+This is the Register Page. An admin can use it to create an account and log in on the system right after.
+![Register page](https://i.imgur.com/741OZY6.png "")
 
 ## Built with
 
